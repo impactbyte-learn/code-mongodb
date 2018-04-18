@@ -9,6 +9,7 @@
   "author": "M Haidar Hanif <npm@mhaidarhanif.com> (https://mhaidarhanif.com)",
   "license": "MIT",
   "dependencies": {
-    "mongodb": "2.2.33"
+    "mongodb": "2.2.33",
+    "mongoose": "4.13.0"
   }
 }

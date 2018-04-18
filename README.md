@@ -9,5 +9,9 @@ sudo service mongod start
 
 ```sh
 npm install
-npm start # node index
+```
+
+```sh
+node test-mongodb.js
+node test-mongoose.js
 ```
