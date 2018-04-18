@@ -1,5 +1,5 @@
 {
-  "type": "mysql",
+  "type": "mongodb",
   "host": "localhost",
   "database": "todo",
   "synchronize": true,

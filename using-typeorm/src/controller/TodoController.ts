@@ -1,21 +1,23 @@
+import { Todo } from "../entity/Todo";
+
 export class TodoController {
-  find() {
+  public static async find() {
     console.log("FIND");
   }
 
-  insert() {
+  public static async insert() {
     console.log("INSERT");
   }
 
-  delete() {
+  public static async delete() {
     console.log("DELETE");
   }
 
-  deleteOne() {
+  public static async deleteOne() {
     console.log("DELETE ONE");
   }
 
-  updateOne() {
+  public static async updateOne() {
     console.log("UPDATE ONE");
   }
 }
