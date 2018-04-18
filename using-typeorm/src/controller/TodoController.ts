@@ -8,9 +8,9 @@ export class TodoController {
     console.log(todos);
   }
 
-  public static async create() {
+  public static async create(text) {
     console.log("[i] CREATE");
-    const todo = await Todo.create({ text: "NEW TEXT" });
+    const todo = await Todo.create({ text });
     todo.save();
     console.log("[i] NEW TODO CREATED", todo);
   }
