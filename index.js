@@ -1,4 +1,4 @@
-const MongoClient = require("mongodb").MongoClient;
+const mongodb = require("mongodb");
 const assert = require("assert");
 
 // Connection URL
@@ -19,20 +19,27 @@ const sampleTodos = [
   }
 ];
 
-const insertTodo = function(db, documents, callback) {
-  // Get the documents collection
-  const collection = db.collection("todos");
-
-  // Insert some documents
-  collection.insertMany(documents, function(err, result) {
+const insertTodo = (db, documents, callback) => {
+  db.collection("todos").insert(documents, (err, result) => {
     assert.equal(err, null);
     console.log("Inserted 3 todos");
     callback(result);
   });
 };
 
+const findTodo = (db, callback) => {
+  db
+    .collection("todos")
+    .find()
+    .toArray((err, result) => {
+      assert.equal(err, null);
+      console.log("All todos");
+      callback(result);
+    });
+};
+
 // Use connect method to connect to the server
-MongoClient.connect(MONGO_URL, function(err, client) {
+mongodb.MongoClient.connect(MONGO_URL, (err, client) => {
   assert.equal(null, err);
 
   console.log("Connected successfully to server");
@@ -40,6 +47,11 @@ MongoClient.connect(MONGO_URL, function(err, client) {
   const db = client.db(dbName);
 
   insertTodo(db, sampleTodos, () => {
+    console.log("inserted...");
+  });
+
+  findTodo(db, result => {
+    console.log(result);
     client.close();
   });
 });
