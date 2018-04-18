@@ -17,7 +17,10 @@ export class TodoController {
 
   public static async create(text) {
     console.log("[i] CREATE");
-    const todo = await Todo.create({ text });
+    const todo = await Todo.create({
+      text,
+      created_at: new Date()
+    });
     todo.save();
     console.log("[i] NEW TODO CREATED", todo);
   }
