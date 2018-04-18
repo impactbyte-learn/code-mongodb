@@ -8,6 +8,13 @@ export class TodoController {
     console.log(todos);
   }
 
+  public static async findByText(text) {
+    console.log("[i] FIND BY TEXT");
+    const todos = await Todo.findByText(text);
+    if (!todos) console.log("[i] ERROR");
+    console.log(todos);
+  }
+
   public static async create(text) {
     console.log("[i] CREATE");
     const todo = await Todo.create({ text });
