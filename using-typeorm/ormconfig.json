@@ -4,9 +4,7 @@
   "database": "impactodo",
   "synchronize": true,
   "logging": false,
-  "entities": ["build/entity/*.js"],
-  "subscribers": ["build/subscriber/*.js"],
-  "migrations": ["build/migration/*.js"],
+  "entities": ["src/entity/*.ts"],
   "cli": {
     "entitiesDir": "src/entity",
     "migrationsDir": "src/migration",
