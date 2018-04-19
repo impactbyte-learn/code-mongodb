@@ -11,4 +11,8 @@ export class Todo extends BaseEntity {
   public static async findByText(text: string): Promise<Todo[]> {
     return await this.find({ where: { text } });
   }
+
+  findText(text) {
+    return Todo.find({ where: { text } });
+  }
 }
