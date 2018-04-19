@@ -31,8 +31,7 @@
     "typeorm": "^0.1.0"
   },
   "scripts": {
-    "dev":
-      "NODE_ENV=development nodemon --watch '**/*.ts' --exec 'ts-node' src/index.ts",
+    "dev": "NODE_ENV=development nodemon --watch '**/*.ts' --exec 'ts-node' src/index.ts",
     "start": "tsc && NODE_ENV=production node build/index.js",
     "typeorm": "typeorm -v",
     "postinstall": "./setup.sh"

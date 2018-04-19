@@ -7,4 +7,10 @@ export class User extends BaseEntity {
   @Column() email: string;
 
   @Column() password: string;
+
+  @Column("datetime") created_at: Date;
+
+  public static async findByEmail(email: string): Promise<User[]> {
+    return await this.find({ where: { email } });
+  }
 }
