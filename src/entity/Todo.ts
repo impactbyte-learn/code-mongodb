@@ -8,7 +8,7 @@ export class Todo extends BaseEntity {
 
   @Column("datetime") created_at: Date;
 
-  public static findByText(text: string): Promise<Todo[]> {
-    return this.find({ where: { text } });
+  public static async findByText(text: string): Promise<Todo[]> {
+    return await this.find({ where: { text } });
   }
 }

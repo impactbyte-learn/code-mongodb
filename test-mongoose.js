@@ -8,10 +8,10 @@ const newTodo = new Todo({ text: "Learn something" });
 
 newTodo.save().then(() => console.log("inserted"));
 
-// Todo.update(
-//   { text: { $regex: /mongo/ } },
-//   { $set: { text: "Learn something new" } },
-//   (err, result) => {
-//     console.log(result);
-//   }
-// );
+Todo.update(
+  { text: { $regex: /mongo/ } },
+  { $set: { text: "Learn something new" } },
+  (err, result) => {
+    console.log(result);
+  }
+);
