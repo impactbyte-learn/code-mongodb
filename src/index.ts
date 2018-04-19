@@ -8,7 +8,8 @@ import { Todo } from "./entity/Todo";
 createConnection()
   .then(async connection => {
     TodoController.create("Code with Node.js");
-    TodoController.find();
+    TodoController.findAll();
+    TodoController.findByText(/node/i);
     console.log("FINISH");
   })
   .catch(error => console.log("Error: ", error));
