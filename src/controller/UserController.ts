@@ -19,7 +19,7 @@ export class UserController {
     }
   }
 
-  public static async create(email, password) {
+  public static async register(email, password) {
     try {
       const payload = {
         email,
@@ -27,6 +27,20 @@ export class UserController {
         created_at: new Date()
       };
       const user = await User.create(payload);
+      user.save();
+      console.log("[i] NEW USER CREATED", user);
+    } catch (error) {
+      console.log("[i] ERROR", error);
+    }
+  }
+
+  public static async login(email, password) {
+    try {
+      const payload = {
+        email,
+        password
+      };
+      const user = await User.findOne(payload);
       user.save();
       console.log("[i] NEW USER CREATED", user);
     } catch (error) {
