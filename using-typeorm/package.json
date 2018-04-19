@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "tsc && node build/index.js",
-    "dev": "nodemon --watch '**/*.ts' --exec 'ts-node' src/index.ts",
+    "dev": "nodemon --watch '**/*.ts' --exec 'npm run start'",
     "typeorm": "typeorm -v"
   }
 }
