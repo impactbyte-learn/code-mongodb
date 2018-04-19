@@ -19,6 +19,8 @@
     "typeorm-example"
   ],
   "devDependencies": {
+    "nodemon": "1.17.3",
+    "ts-node": "5.0.1",
     "typescript": "^2.5.3"
   },
   "dependencies": {
@@ -30,6 +32,7 @@
   },
   "scripts": {
     "start": "tsc && node build/index.js",
-    "typeorm": "./node_modules/.bin/typeorm -v"
+    "dev": "nodemon --watch '**/*.ts' --exec 'ts-node' src/index.ts",
+    "typeorm": "typeorm -v"
   }
 }

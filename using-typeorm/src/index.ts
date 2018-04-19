@@ -7,7 +7,8 @@ import { Todo } from "./entity/Todo";
 // connection settings are in the "ormconfig.json" file
 createConnection()
   .then(async connection => {
-    TodoController.create();
-    // TodoController.find();
+    TodoController.create("NEW TODO TEXT");
+    TodoController.find();
+    console.log("FINISH");
   })
   .catch(error => console.log("Error: ", error));

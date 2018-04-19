@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, ObjectID, ObjectIdColumn } from "typeorm";
 
-@Entity()
+@Entity("todos")
 export class Todo extends BaseEntity {
   @ObjectIdColumn() id: ObjectID;
 
