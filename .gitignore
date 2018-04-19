@@ -1,2 +1,3 @@
 node_modules
-*.hide
+src/**/*.js
+src/**/*.js.map
