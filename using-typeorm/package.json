@@ -31,8 +31,9 @@
     "typeorm": "^0.1.0"
   },
   "scripts": {
-    "start": "tsc && node build/index.js",
-    "dev": "nodemon --watch '**/*.ts' --exec 'npm run start'",
+    "dev":
+      "NODE_ENV=development nodemon --watch '**/*.ts' --exec 'ts-node' src/index.ts",
+    "start": "NODE_ENV=production tsc && node build/index.js",
     "typeorm": "typeorm -v"
   }
 }
